@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<header>
+  <h1>Monitor de dontpad</h1>
+</header>
+
+<div class="">
+  <p>Ultimo(s) dontpad(s) modificado(s):</p>
+  <ul id="j_mod" data-page="{{ url_for('ajax_list') }}"><ul>
+</div>
+<hr>
+<a title="" href="{{ url_for('add_dontpad') }}">Add Dontpad</a>
+{% endblock %}
