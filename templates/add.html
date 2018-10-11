@@ -1,0 +1,14 @@
+{% block body %}
+<header>
+  <h1>Adicionar Arquivos:</h1>
+</header>
+<form action="" method="post" enctype="multipart/form-data">
+  <label>
+      <span>http://dontpad.com/</span>
+      <input type="text" name="path" placeholder="teste" required>
+  </label>
+  <br>
+  <input type="submit" name="submit" value="Adicionar">
+</form>
+<a title="Dontpad Check - Home" href="{{ url_for('check') }}">Voltar</a>
+{% endblock %}

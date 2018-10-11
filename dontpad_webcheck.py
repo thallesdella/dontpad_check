@@ -18,10 +18,10 @@ def read_file(lista):
                         continue
                 except KeyError:
                     lista[linha] = ''
-            f.close
+            f.close()
     else:
         with open('dontpad.txt', 'w') as f:
-            f.close
+            f.close()
     return lista
 
 @app.route('/')
@@ -31,7 +31,15 @@ def check():
 
 @app.route('/config', methods=['GET', 'POST'])
 def add_dontpad():
-    return 'add'
+    if request.method == 'GET':
+        return render_template('add.html', title='Adicionar Arquivo')
+
+    if request.form['path'] != '':
+        path = '/{}'.format(request.form['path'])
+        with open('dontpad.txt', 'w+') as f:
+            f.write(path)
+            f.close()
+    return redirect(url_for('index'))
 
 @app.route('/ajax-list')
 def ajax_list():

@@ -14,10 +14,10 @@ def read_file(lista):
                         continue
                 except KeyError:
                     lista[linha] = ''
-            f.close
+            f.close()
     else:
         with open('dontpad.txt', 'w') as f:
-            f.close
+            f.close()
     return lista
 
 if __name__ == '__main__':
